@@ -376,15 +376,15 @@ void SimplexProd::multiplySimplices(Simplex s0, Simplex s1) {
 	this->maxOld = numOfMaxSimplex(s0.dimension, s1.dimension);
 	this->path.initMatrixInt(this->maxSimplex, s0.dimension + s1.dimension);
 
-	//this->path.updateA(0, 0, 0); this->path.updateA(0, 1, 0); this->path.updateA(0, 2, 1); this->path.updateA(0, 3, 1);
-	//this->path.updateA(1, 0, 0); this->path.updateA(1, 1, 1); this->path.updateA(1, 2, 0); this->path.updateA(1, 3, 1);
-	//this->path.updateA(2, 0, 0); this->path.updateA(2, 1, 1); this->path.updateA(2, 2, 1); this->path.updateA(2, 3, 0);
-	//this->path.updateA(3, 0, 1); this->path.updateA(3, 1, 0); this->path.updateA(3, 2, 0); this->path.updateA(3, 3, 1);
-	//this->path.updateA(4, 0, 1); this->path.updateA(4, 1, 0); this->path.updateA(4, 2, 1); this->path.updateA(4, 3, 0);
-	//this->path.updateA(5, 0, 1); this->path.updateA(5, 1, 1); this->path.updateA(5, 2, 0); this->path.updateA(5, 3, 0);
+	this->path.updateA(0, 0, 0); this->path.updateA(0, 1, 0); this->path.updateA(0, 2, 1); this->path.updateA(0, 3, 1);
+	this->path.updateA(1, 0, 0); this->path.updateA(1, 1, 1); this->path.updateA(1, 2, 0); this->path.updateA(1, 3, 1);
+	this->path.updateA(2, 0, 0); this->path.updateA(2, 1, 1); this->path.updateA(2, 2, 1); this->path.updateA(2, 3, 0);
+	this->path.updateA(3, 0, 1); this->path.updateA(3, 1, 0); this->path.updateA(3, 2, 0); this->path.updateA(3, 3, 1);
+	this->path.updateA(4, 0, 1); this->path.updateA(4, 1, 0); this->path.updateA(4, 2, 1); this->path.updateA(4, 3, 0);
+	this->path.updateA(5, 0, 1); this->path.updateA(5, 1, 1); this->path.updateA(5, 2, 0); this->path.updateA(5, 3, 0);
 	
-	this->path.updateA(0, 0, 0); this->path.updateA(0, 1, 1);
-	this->path.updateA(1, 0, 1); this->path.updateA(1, 1, 0);
+	//this->path.updateA(0, 0, 0); this->path.updateA(0, 1, 1);
+	//this->path.updateA(1, 0, 1); this->path.updateA(1, 1, 0);
 
 	this->maximalSimplices.initMatrixSimplexAlpha(1, this->maxSimplex);
 	int simplexNum = 1;
@@ -415,15 +415,15 @@ void SimplexProd::multiplySimplicesUpdate(Simplex s0, Simplex s1) {
 
 	this->maxSimplex = numOfMaxSimplex(s0.dimension, s1.dimension);
 	
-	//this->path.updateA(0, 0, 0); this->path.updateA(0, 1, 0); this->path.updateA(0, 2, 1); this->path.updateA(0, 3, 1);
-	//this->path.updateA(1, 0, 0); this->path.updateA(1, 1, 1); this->path.updateA(1, 2, 0); this->path.updateA(1, 3, 1);
-	//this->path.updateA(2, 0, 0); this->path.updateA(2, 1, 1); this->path.updateA(2, 2, 1); this->path.updateA(2, 3, 0);
-	//this->path.updateA(3, 0, 1); this->path.updateA(3, 1, 0); this->path.updateA(3, 2, 0); this->path.updateA(3, 3, 1);
-	//this->path.updateA(4, 0, 1); this->path.updateA(4, 1, 0); this->path.updateA(4, 2, 1); this->path.updateA(4, 3, 0);
-	//this->path.updateA(5, 0, 1); this->path.updateA(5, 1, 1); this->path.updateA(5, 2, 0); this->path.updateA(5, 3, 0);
+	this->path.updateA(0, 0, 0); this->path.updateA(0, 1, 0); this->path.updateA(0, 2, 1); this->path.updateA(0, 3, 1);
+	this->path.updateA(1, 0, 0); this->path.updateA(1, 1, 1); this->path.updateA(1, 2, 0); this->path.updateA(1, 3, 1);
+	this->path.updateA(2, 0, 0); this->path.updateA(2, 1, 1); this->path.updateA(2, 2, 1); this->path.updateA(2, 3, 0);
+	this->path.updateA(3, 0, 1); this->path.updateA(3, 1, 0); this->path.updateA(3, 2, 0); this->path.updateA(3, 3, 1);
+	this->path.updateA(4, 0, 1); this->path.updateA(4, 1, 0); this->path.updateA(4, 2, 1); this->path.updateA(4, 3, 0);
+	this->path.updateA(5, 0, 1); this->path.updateA(5, 1, 1); this->path.updateA(5, 2, 0); this->path.updateA(5, 3, 0);
 	
-	this->path.updateA(0, 0, 0); this->path.updateA(0, 1, 1);
-	this->path.updateA(1, 0, 1); this->path.updateA(1, 1, 0);
+	//this->path.updateA(0, 0, 0); this->path.updateA(0, 1, 1);
+	//this->path.updateA(1, 0, 1); this->path.updateA(1, 1, 0);
 	
 	this->maximalSimplices.updateMatrixSimplexAlphaSize(1, this->maxSimplex);
 	int simplexNum = 1;

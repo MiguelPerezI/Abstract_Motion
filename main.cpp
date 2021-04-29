@@ -49,17 +49,18 @@ int main(int argc, char **argv) {
 	
 	srand(time(NULL));
 	
-	int M = 1000;
+	int M = 12000;
         double r = 0.1;
-	int Ns = 3;
+	int Ns = 10;
 
-	int maxInt = 2;
-	int numOfMaxSimplex = 3;
+	int maxInt = 3;
+	int numOfMaxSimplex = 4;
 	komplex.initComplex(numOfMaxSimplex, maxInt + 1);
 
-	komplex.K.A[0][0].initSimplex(2, 0, 1);
-	komplex.K.A[0][1].initSimplex(2, 1, 2);
-	komplex.K.A[0][2].initSimplex(2, 0, 2);
+	komplex.K.A[0][0].initSimplex(3, 0, 1, 2);
+	komplex.K.A[0][1].initSimplex(3, 0, 1, 3);
+	komplex.K.A[0][2].initSimplex(3, 0, 2, 3);
+	komplex.K.A[0][3].initSimplex(3, 1, 2, 3);
 
 	//komplex.K.A[0][3].initSimplex(2, 1, 2);
 	KxK.initComplexProduct(komplex);
@@ -67,7 +68,7 @@ int main(int argc, char **argv) {
 	map1.projection1(KxK);
 	map0.projection2(KxK);
 
-	L.initSubComplexJ(18);
+	L.initSubComplexJ(96);
 	int counting = 0;
 
 	for (int i = 0; i < KxK.listOfFacets.m; i++) {
@@ -96,7 +97,7 @@ int main(int argc, char **argv) {
 	 komplex.graph.addWeight(0, 2, 1);
 	 komplex.graph.addWeight(1, 2, 1);
 
-	suchen.initLocalSearch(JsubL, komplex, map1, map0, M, r);	
+	//suchen.initLocalSearch(JsubL, komplex, map1, map0, M, r);	
 
 	int ccount = 0;
 	
